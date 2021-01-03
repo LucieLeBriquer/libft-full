@@ -9,9 +9,12 @@ INCS		= $(addprefix $(INCS_DIR), libftfull.h)
 
 SRCS		= convert/ft_atoi.c \
 			  convert/ft_itoa.c \
+			  convert/ft_max.c \
+			  convert/ft_min.c \
 			  convert/ft_tolower.c \
 			  convert/ft_toupper.c \
 			  convert/ft_utoa.c \
+			  convert/ft_utoct.c \
 			  convert/ft_utox.c \
 			  convert/ft_utoxx.c \
 			  gnl/get_next_line.c \
@@ -80,9 +83,7 @@ PRINT_SRCS	= $(addprefix printf/, ft_printf.c \
 			print/fun_print_int.c \
 			print/fun_print_int_bis.c \
 			print/print.c \
-			utils/utils_int.c \
-			utils/utils_ptr.c \
-			utils/nbtostr2.c)
+			print/utils.c)
 
 
 OBJS		= $(SRCS:.c=.o) $(PRINT_SRCS:.c=.o)
@@ -92,10 +93,11 @@ OBJS		= $(SRCS:.c=.o) $(PRINT_SRCS:.c=.o)
 
 all			: $(NAME)
 
-bonus		: all
-
 $(NAME)		: $(OBJS) $(INCS)
 			$(LIB) $(NAME) $(OBJS)
+
+norme		:
+			norminette $(SRCS) $(PRINT_SRCS) $(INCS)
 
 clean:
 			$(RM) $(OBJS)
@@ -105,4 +107,4 @@ fclean		: clean
 
 re			: fclean all
 
-.PHONY		: all clean fclean re
+.PHONY		: all clean fclean re norme
