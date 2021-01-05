@@ -89,21 +89,21 @@ PRINT_SRCS	= $(addprefix printf/, ft_printf.c \
 OBJS		= $(SRCS:.c=.o) $(PRINT_SRCS:.c=.o)
 
 %.o			: %.c
-			$(CC) $(CFLAGS) -I$(INCS_DIR) -c $< -o $@
+			@$(CC) $(CFLAGS) -I$(INCS_DIR) -c $< -o $@
 
 all			: $(NAME)
 
 $(NAME)		: $(OBJS) $(INCS)
-			$(LIB) $(NAME) $(OBJS)
+			@$(LIB) $(NAME) $(OBJS)
 
 norme		:
-			norminette $(SRCS) $(PRINT_SRCS) $(INCS)
+			@norminette $(SRCS) $(PRINT_SRCS) $(INCS)
 
 clean:
-			$(RM) $(OBJS)
+			@$(RM) $(OBJS)
 
 fclean		: clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re			: fclean all
 
