@@ -1,7 +1,7 @@
 CC			= gcc
 CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
-NAME		= libftfull.a
+NAME		= libft.a
 LIB			= ar rcs
 
 INCS_DIR	= includes/
