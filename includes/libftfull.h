@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/21 00:08:59 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/01/08 13:08:30 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/02/11 17:45:38 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,6 +113,7 @@ typedef struct s_print
 	int		field;
 	int		precision;
 	int		type;
+	int		fd;
 }			t_print;
 
 typedef int	(*t_func)(t_print, va_list);
