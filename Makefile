@@ -6,7 +6,7 @@ LIB			= ar rcs
 NORME		= ~/.norminette_v2/norminette.rb
 
 INCS_DIR	= includes/
-INCS		= $(addprefix $(INCS_DIR), libftfull.h)
+INCS		= $(addprefix $(INCS_DIR), libftfull.h libftstruct.h)
 
 SRCS		= convert/ft_atoi.c \
 			  convert/ft_itoa.c \
