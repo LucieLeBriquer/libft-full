@@ -3,6 +3,7 @@ CFLAGS		= -Wall -Wextra -Werror
 RM			= rm -rf
 NAME		= libft.a
 LIB			= ar rcs
+NORME		= ~/.norminette_v2/norminette.rb
 
 INCS_DIR	= includes/
 INCS		= $(addprefix $(INCS_DIR), libftfull.h)
@@ -67,7 +68,7 @@ SRCS		= convert/ft_atoi.c \
 			  write/ft_putstr.c \
 			  write/ft_putstr_fd.c
 
-PRINT_SRCS	= $(addprefix printf/, ft_printf.c \
+PRINT_SRCS	= $(addprefix printf/, ft_printf.c ft_printf_fd.c \
 			parse/errors.c \
 			parse/params.c \
 			print/print_0chr.c \
@@ -98,7 +99,7 @@ $(NAME)		: $(OBJS) $(INCS)
 			@$(LIB) $(NAME) $(OBJS)
 
 norme		:
-			@norminette $(SRCS) $(PRINT_SRCS) $(INCS)
+			@$(NORME) $(SRCS) $(PRINT_SRCS) $(INCS)
 
 clean:
 			@$(RM) $(OBJS)

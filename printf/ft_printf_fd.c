@@ -6,7 +6,7 @@
 /*   By: lle-briq <lle-briq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 18:04:46 by lle-briq          #+#    #+#             */
-/*   Updated: 2021/02/11 17:36:42 by lle-briq         ###   ########.fr       */
+/*   Updated: 2021/02/11 17:56:20 by lle-briq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_printf_fd(int fd, const char *str, ...)
 	while (*str)
 	{
 		if (*str != '%')
-			str = print_str_classic(str, &nb_char);
+			str = print_str_classic(str, &nb_char, fd);
 		else
 		{
 			str++;
